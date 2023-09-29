@@ -10,7 +10,9 @@ btn.addEventListener('click', function(){
     }else{
 
         let new_elem = document.createElement("li");
-        new_elem.innerHTML = mytext.value;
+        new_elem.innerHTML = mytext.value.toUpperCase();
+        // new_elem.innerHTML = mytext.value.toLowerCase();
         mylist.appendChild(new_elem);
     }
 })
+
