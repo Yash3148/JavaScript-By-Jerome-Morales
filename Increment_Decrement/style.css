@@ -1,0 +1,31 @@
+#plus{
+    color: green;
+}
+
+#minus{
+    color:red
+}
+
+#reset{
+    color: blue;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.wrap{
+    background-color: rgb(58, 196, 201);
+    padding: 10px;
+}
+body{
+    height: 90vh;
+    background-color: aquamarine;
+    color: rgb(198, 9, 9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
