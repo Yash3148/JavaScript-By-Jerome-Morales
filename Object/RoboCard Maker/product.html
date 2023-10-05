@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>RoboCard</title>
+</head>
+<body>
+
+    <h1 class="text-center bg-info p-2 text-white h4">Robot Card Maker</h1>
+    <div class="container">
+        
+        <div class="row ">
+
+            <!-- <div class="col-md-3">
+                <div class="mb-3 mb-4">
+                    <label for="robotImage" class="form-label">Upload Pic</label>
+                    <input type="file" id="robotImage" class="form-control">
+                </div> -->
+        
+                <div class="mb-3">
+                    <label for="setName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="setName" placeholder="Enter product name">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="setName" class="form-label">Product Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="Enter product price">
+                </div>
+               
+                <button type="button" class="btn btn-outline-primary" id="addprod">Add Product</button>
+
+            </div>
+
+            <!-- <div class="col-md-9">
+                <div class="row parentElement">
+                    <div class="card m-2" style="width: 10rem;">
+                        <img src="robots/2023-05-28_12h30_38.png" class="card-img-top py-2" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title robotName text-center">PR-42657</h5> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+          
+    <script>
+        const parentele = document.querySelector(".parentElement");
+        const robotimg = document.querySelector("#robotImage");
+        const setname = document.querySelector("#setName");
+        const addprod = document.querySelector("#addprod");
+        const price = document.querySelector("#price");
+
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+            
+            displayProd() {
+                console.log(`New product added: ${this.name} Price: USD ${this.price}`);
+            }
+        }
+
+        addprod.addEventListener('click', function (){
+            const product1 = new Product(setname.value, price.value);
+            product1.displayProd();
+            setname.value = "";
+            price.value = "";
+        })
+
+
+        // let product1 = new Product("Barca home Kit", 21);
+        // let product2 = new Product("Barca away kit", 19);
+
+        // product1.introduce();
+        // product2.introduce();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
