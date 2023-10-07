@@ -14,42 +14,76 @@
         
         <div class="row ">
 
-            <!-- <div class="col-md-3">
+            <div class="col-md-3">
                 <div class="mb-3 mb-4">
                     <label for="robotImage" class="form-label">Upload Pic</label>
-                    <input type="file" id="robotImage" class="form-control"> -->
+                    <input type="file" id="robotImage" class="form-control">
                 </div>
         
-                <!-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="setName" class="form-label">Robot Name</label>
                     <input type="text" class="form-control" id="setName" placeholder="Enter robot name">
-                </div> -->
+                </div>
                
-                <!-- <button type="button" class="btn btn-outline-primary" id="btnMakeRobot">Add Product</button> -->
+                <button type="button" class="btn btn-outline-primary" id="btnMakeRobot">Add Product</button>
 
             </div>
 
             <div class="col-md-9">
                 <div class="row parentElement">
-                    <div class="card m-2" style="width: 10rem;">
-                        <img src="robots/2023-05-28_12h30_38.png" class="card-img-top py-2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title robotName text-center">PR-42657</h5>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
         </div>
     </div>
-          
-    </div>
 
+    <script>
+        document.getElementById("btnMakeRobot").addEventListener("click", function () {
+            const robotImageInput = document.getElementById("robotImage");
+            const setNameInput = document.getElementById("setName");
 
-    
+            const imageFile = robotImageInput.files[0];
+            const robotName = setNameInput.value;
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app.js"></script>
-  
+            if (!imageFile || !robotName) {
+                alert("Please upload an image and enter a robot name.");
+                return;
+            }
+
+            // Create a new card element for the uploaded image
+            const card = document.createElement("div");
+            card.className = "card m-2";
+            card.style = "width: 10rem;";
+
+            const cardImage = document.createElement("img");
+            cardImage.className = "card-img-top py-2";
+            cardImage.alt = "Robot Image";
+            cardImage.src = URL.createObjectURL(imageFile);
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+
+            const cardTitle = document.createElement("h5");
+            cardTitle.className = "card-title robotName text-center";
+            cardTitle.textContent = robotName;
+
+            cardBody.appendChild(cardTitle);
+            card.appendChild(cardImage);
+            card.appendChild(cardBody);
+
+            // Add the card to the parent element
+            const parentElement = document.querySelector(".parentElement");
+            parentElement.appendChild(card);
+
+            // Reset input fields
+            robotImageInput.value = "";
+            setNameInput.value = "";
+
+            // Show an alert
+            alert("Image has been uploaded.");
+        });
+    </script>
+
 </body>
 </html>
