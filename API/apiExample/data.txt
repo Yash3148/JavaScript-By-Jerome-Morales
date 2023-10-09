@@ -1,0 +1,19 @@
+[
+    {
+        "name" : "Yash",
+        "age" : 21,
+        "country" : "India"
+
+    },
+
+    {
+        "name" : "Mapi",
+        "age" : 26,
+        "city" : "Barca"
+    },
+
+    {
+        "name" : "Ingrid",
+        "age" : 24
+    }
+]
