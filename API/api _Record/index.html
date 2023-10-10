@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Record</title>
+</head>
+<body>
+    <h2>Add a Record</h2>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name">
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <ul id="recordList">
+        <!-- Display added records here -->
+    </ul>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase with your project configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const myForm = document.getElementById('myForm');
+        const recordList = document.getElementById('recordList');
+        const database = firebase.database();
+
+        myForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(myForm);
+            const record = Object.fromEntries(formData);
+
+            // Reference to the Firebase database path where you want to store data
+            const recordsRef = database.ref('records');
+
+            // Push the record data to the database
+            recordsRef.push(record);
+
+            // Display the added record
+            const listItem = document.createElement('li');
+            listItem.textContent = `Name: ${record.name}, Email: ${record.email}`;
+            recordList.appendChild(listItem);
+
+            // Clear the form
+            myForm.reset();
+        });
+    </script>
+</body>
+</html>
