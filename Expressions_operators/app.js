@@ -10,14 +10,14 @@ myBtn.addEventListener("click", function () {
 
 // Arithmetic Operators
 
-    // let c = a + b;            // Addition Operator
-    // let c = a - b;           // Subtraction Operator
-    // let c = a * b;          // Multiplication Operator
-    // let c = a / b;         // Division Operator
-    // let c = a % b;        // Remainder Operator
-    // let c = a ** b;      // Exponential Operator
+     let c = a + b;            // Addition Operator
+    //  let c = a - b;           // Subtraction Operator
+    //  let c = a * b;          // Multiplication Operator
+    //  let c = a / b;         // Division Operator
+    //  let c = a % b;        // Remainder Operator
+    //  let c = a ** b;      // Exponential Operator
 
-    // displayArea.innerHTML = c;
+    displayArea.innerHTML = c;
 
 // Relational Operators
 
@@ -53,7 +53,7 @@ myBtn.addEventListener("click", function () {
     // x -= a;     // explanation --> x = x - a;    Substraction Assignment
     // displayArea.innerHTML = x;
 
-    x *= a;        // explanation --> x = x * a;  Multiplication Assignment
-    displayArea.innerHTML = x;
-   
+   // x *= a;        // explanation --> x = x * a;  Multiplication Assignment
+  //  displayArea.innerHTML = x;
+  
 }) 
