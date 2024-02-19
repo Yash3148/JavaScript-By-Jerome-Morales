@@ -7,7 +7,7 @@ body {
     width: 100vw;
 }
 
-h2 {
+ h2 {
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +35,7 @@ button {
     color: white;
 }
 
-button:focus {
+ button:focus {
     outline: none;
     transform: scale(1.04);
     background-color: rgb(255, 255, 255);
