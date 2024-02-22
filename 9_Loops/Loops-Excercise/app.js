@@ -65,8 +65,3 @@ for (let x = 1; x <= 20; x++) {
 //  JAVASCRIPT
 //  19
 //  20
-  
-
-
-
-
